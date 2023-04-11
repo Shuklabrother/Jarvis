@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JARVIS Chatbot</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 60px;
+      margin-top: 40px;
+      text-shadow: 2px 2px #FF0000;
+    }
+    #chatLog {
+      border: 2px solid #FF0000;
+      height: 400px;
+      margin: 20px;
+      padding: 10px;
+      overflow-y: scroll;
+    }
+    #userBox {
+      border: 2px solid #FF0000;
+      border-radius: 5px;
+      height: 40px;
+      padding: 5px;
+      margin-right: 10px;
+      width: 70%;
+      font-size: 20px;
+      color: #000;
+      background-color: #fff;
+    }
+    button {
+      background-color: #FF0000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      height: 50px;
+      width: 20%;
+      font-size: 20px;
+      cursor: pointer;
+      text-shadow: 1px 1px #000;
+    }
+    button:hover {
+      background-color: #D60000;
+    }
+    #chatInput {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #000;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #FF0000;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D60000;
+    }
+  </style>
+</head>
+<body>
+  <h1>JARVIS</h1>
+  <div id="chatLog"></div>
+  <div id="chatInput">
+    <input id="userBox" type="text" placeholder="Type your message here..." />
+    <button onclick="talk()">Send</button>
+  </div>
+  <script>
+  
+    var know = {
+      "Hello": "Hi",
+      "Hi": "Hello",
+      "What's your name?": "My name is JARVIS, how can I assist you?",
+      "How are you?": "I'm doing well, thank you. How about you?",
+      "What time is it?": "It's currently [insert current time here].",
+      "What's the weather like?": "I'm sorry, I'm not capable of providing that information at the moment.",
+      "Tell me a joke.": "Why did the tomato turn red? Because it saw the salad dressing!",
+      "Thank you.": "You're welcome!"
+    };
+    function talk() {
+      var user = document.getElementById("userBox").value;
+
+      if (user in know) {
+        document.getElementById("chatLog").innerHTML += "<p><strong>You:</strong> " + user + "</p><p><strong>Jarvis:</strong> " + know[user] + "</p>";
+      } else {
+        document.getElementById("chatLog").innerHTML += "<p><strong>You:</strong> " + user + "</p><p><strong>Jarvis:</strong> Sorry "+ name +", I am a AI model I can't do this.</p>";
+      }
+      
+      document.getElementById("userBox").value = "";
+    }
+    const name = prompt("What is your name:", " ");
+    console.log(name)
+  </script>
+</body>
+</html>
