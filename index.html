@@ -94,13 +94,11 @@
       if (user in know) {
         document.getElementById("chatLog").innerHTML += "<p><strong>You:</strong> " + user + "</p><p><strong>Jarvis:</strong> " + know[user] + "</p>";
       } else {
-        document.getElementById("chatLog").innerHTML += "<p><strong>You:</strong> " + user + "</p><p><strong>Jarvis:</strong> Sorry "+ name +", I am a AI model I can't do this.</p>";
+        document.getElementById("chatLog").innerHTML += "<p><strong>You:</strong> " + user + "</p><p><strong>Jarvis:</strong> Sorry, I am a AI model I can't do this.</p>";
       }
       
       document.getElementById("userBox").value = "";
     }
-    const name = prompt("What is your name:", " ");
-    console.log(name)
   </script>
 </body>
 </html>
